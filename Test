@@ -8,25 +8,50 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+
 public class MainActivity extends AppCompatActivity {
-private Button button;
+private Button button1,button4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new MyListener());
+        Button button1 = (Button) findViewById(R.id.button);
+        button1.setText("按钮1");
+        button1.layout(10,10,100,50);
+        button1.setOnClickListener(new MyListener());
+        Button button4=(Button)findViewById(R.id.button4);
+        button4.setText("按钮2");
+        button4.layout(10,10,100,50);
+        button4.setOnClickListener(new boby());
+        Button button5=(Button)findViewById(R.id.button5);
+        button5.setText("按钮3");
+        button5.layout(10,10,100,50);
+        button5.setOnClickListener(new dood());
 
-        button.layout(100, 120, 100, 40);
-        button.setText("按钮");
     }
-        private class MyListener implements View.OnClickListener{
-            public void onClick(View view){
-                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("我是梁根棚");
-                AlertDialog b=builder.create();
-                b.show();
-            }
-
+    private class MyListener implements View.OnClickListener {
+        public void onClick(View view) {
+            AlertDialog.Builder button1 = new AlertDialog.Builder(MainActivity.this);
+            button1.setMessage("我是梁根棚");
+            AlertDialog b = button1.create();
+            b.show();
 
         }
+    }
+    private  class boby implements View.OnClickListener{
+        public void onClick(View view){
+            AlertDialog.Builder button4 = new AlertDialog.Builder(MainActivity.this);
+            button4.setMessage("我是李泽君");
+            AlertDialog a=button4.create();
+            a.show();
+        }
+    }
+    private  class dood implements View.OnClickListener{
+        public void onClick(View view){
+            AlertDialog.Builder button5 = new AlertDialog.Builder(MainActivity.this);
+            button5.setMessage("我是文伟庭");
+            AlertDialog c=button5.create();
+            c.show();
+        }
+    }
